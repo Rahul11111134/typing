@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import BlogList from '../../components/BlogList';
 
 export default function Blog() {
   return (
@@ -13,11 +14,7 @@ export default function Blog() {
             <h1>Blog</h1>
             <p className="subtitle">Read the latest articles, tips, and updates about typing, productivity, and technology.</p>
           </header>
-          <section className="card">
-            <p>
-              Welcome to our blog! Here you will find helpful articles, typing tips, productivity hacks, and updates about our app and the world of technology. Stay tuned for regular posts and insights.
-            </p>
-          </section>
+          <BlogList />
         </div>
       </main>
     </>

@@ -1,0 +1,46 @@
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --muted:#94a3b8;
+  --accent:#7c3aed;
+  --accent-2:#06b6d4;
+}
+*{box-sizing:border-box}
+html,body,#__next{height:100%}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background:linear-gradient(180deg, #071021 0%, #0f1724 100%);
+  color:#e6eef8;
+}
+.page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px}
+.container{width:100%;max-width:980px}
+.header{margin-bottom:18px}
+.header h1{margin:0;font-size:28px}
+.subtitle{color:var(--muted);margin-top:6px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:12px;box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+.controls{display:flex;gap:12px;align-items:center;margin-bottom:16px}
+.controls label{display:flex;flex-direction:column;color:var(--muted);font-size:13px}
+.controls select{margin-top:6px;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+.custom-time{padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;width:84px}
+.buttons{margin-left:auto;display:flex;gap:8px}
+.btn{padding:8px 12px;border-radius:8px;border:0;background:rgba(255,255,255,0.02);color:var(--muted);cursor:pointer}
+.btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;box-shadow:0 6px 18px rgba(124,58,237,0.18)}
+.test{margin-top:6px}
+.passage{background:rgba(255,255,255,0.02);padding:16px;border-radius:8px;color:var(--muted);min-height:120px;line-height:1.6;font-size:18px;overflow:hidden}
+.char{padding:0 1px}
+.correct{color:#86efac}
+.wrong{background:rgba(255,72,66,0.12);color:#ff6b6b}
+.input{width:100%;margin-top:12px;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;resize:none}
+.status{display:flex;gap:16px;margin-top:12px;color:var(--muted)}
+.result{margin-top:12px;background:rgba(6,11,23,0.6);padding:12px;border-radius:8px}
+.history{margin-top:12px;color:var(--muted)}
+.history-item{padding:6px 0;border-bottom:1px dashed rgba(255,255,255,0.02)}
+.footer{margin-top:18px;color:var(--muted);font-size:13px}
+@media (max-width:720px){.controls{flex-direction:column;align-items:stretch}.buttons{margin-left:0;justify-content:flex-end}}
+.passage{font-size:18px}
+@media (max-width:480px){
+  .passage{font-size:16px;min-height:140px}
+  .buttons{flex-direction:column;gap:10px}
+  .buttons .btn{width:100%}
+}

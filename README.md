@@ -14,6 +14,14 @@ npm run dev
 
 Open http://localhost:3000 in your browser.
 
+Help page
+
+There's a help guide at `/help` generated from `app/help.md`.
+
+Vercel
+
+The repo includes `vercel.json` with recommended settings for deploying to Vercel. When importing the repo on Vercel, it will detect Next.js automatically.
+
 What's included
 - Multi-language sample texts
 - Timer options (15s/30s/60s/custom)

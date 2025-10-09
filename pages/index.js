@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import TypingTest from '../components/TypingTest'
+import Reviews from '../components/Reviews'
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
           </header>
 
           <TypingTest />
+          <Reviews />
 
           <footer className="footer">Built with ❤️ — Professional starter UI</footer>
         </div>

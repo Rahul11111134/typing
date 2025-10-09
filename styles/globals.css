@@ -37,6 +37,15 @@ body{
 .history{margin-top:12px;color:var(--muted)}
 .history-item{padding:6px 0;border-bottom:1px dashed rgba(255,255,255,0.02)}
 .footer{margin-top:18px;color:var(--muted);font-size:13px}
+/* Reviews */
+.reviews h2{margin:0 0 8px 0}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px}
+.review-item{display:flex;gap:12px;align-items:flex-start;padding:12px;background:rgba(255,255,255,0.01);border-radius:8px}
+.review-item img{border-radius:8px}
+.review-body p{margin:6px 0 0 0;color:var(--muted);font-size:14px}
+.review-body .role{display:block;color:var(--muted);font-size:12px}
+@media (max-width:720px){.reviews-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.reviews-grid{grid-template-columns:1fr}}
 @media (max-width:720px){.controls{flex-direction:column;align-items:stretch}.buttons{margin-left:0;justify-content:flex-end}}
 .passage{font-size:18px}
 @media (max-width:480px){

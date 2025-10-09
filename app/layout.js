@@ -3,7 +3,12 @@ import Script from 'next/script'; // Google Analytics के लिए
 
 export const metadata = {
   title: 'Typing Speed Test',
-  description: 'Test and improve your typing speed and accuracy online. Practice in multiple languages, track your progress, and read expert tips on our blog.'
+  description: 'Test and improve your typing speed and accuracy online. Practice in multiple languages, track your progress, and read expert tips on our blog.',
+  
+  // --- यहाँ आपका वेरिफिकेशन कोड जोड़ा गया है ---
+  verification: {
+    google: "9abgZRwEZBi_wkLR7TENWYzsOoy5dJ4PouDgS0HZNV0",
+  },
 };
 
 export default function RootLayout({ children }) {

@@ -1,20 +1,12 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import Script from 'next/script'; // Analytics के लिए
-import "./globals.css";
+import '../styles/globals.css';
+import Script from 'next/script'; // Google Analytics के लिए
 
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Online Typing Speed Test",
-  description: "Test and improve your typing speed (WPM) and accuracy. Supports multiple languages including English, Hindi, and Punjabi.",
+export const metadata = {
+  title: 'Typing Speed Test',
+  description: 'Test and improve your typing speed and accuracy online. Practice in multiple languages, track your progress, and read expert tips on our blog.'
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
@@ -32,7 +24,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={inter.className}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

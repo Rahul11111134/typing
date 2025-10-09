@@ -1,3 +1,5 @@
+
+"use client";
 import Head from 'next/head'
 import TypingTest from '../../components/TypingTest'
 import Reviews from '../../components/Reviews'

@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import TypingTest from '../components/TypingTest'
-import Reviews from '../components/Reviews'
+import TypingTest from '../../components/TypingTest'
+import Reviews from '../../components/Reviews'
 
 export default function Home() {
   return (
@@ -24,7 +24,7 @@ export default function Home() {
           <TypingTest />
           <Reviews />
 
-          <footer className="footer">Built with ❤️ — Professional starter UI</footer>
+          <footer className="footer">Built with   Professional starter UI</footer>
         </div>
       </main>
     </>

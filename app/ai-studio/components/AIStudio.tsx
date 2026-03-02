@@ -1,7 +1,9 @@
 "use client";
 
+export const dynamic = "force-dynamic";
+export const runtime = "edge";
+
 import { useState, useRef } from "react";
-import { pipeline } from "@xenova/transformers";
 
 export default function AIStudio() {
   const [prompt, setPrompt] = useState("");
@@ -26,10 +28,18 @@ export default function AIStudio() {
 
   const loadModel = async () => {
     if (!pipeRef.current) {
-      pipeRef.current = await pipeline(
+      const transformers = await import("@xenova/transformers");
+
+      // Force web backend only
+      transformers.env.backends.onnx.wasm.wasmPaths =
+        "https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/";
+
+      pipeRef.current = await transformers.pipeline(
         "text-to-image",
         "Xenova/stable-diffusion-turbo",
-        { device: "webgpu" }
+        {
+          device: "webgpu",
+        }
       );
     }
     return pipeRef.current;
@@ -41,9 +51,7 @@ export default function AIStudio() {
       setImage(null);
 
       const pipe = await loadModel();
-
       const enhanced = enhancePrompt(prompt);
-
       const steps = quality === "Fast" ? 2 : 4;
 
       const output = await pipe(enhanced, {
@@ -64,18 +72,14 @@ export default function AIStudio() {
 
   return (
     <div className="bg-gray-900 rounded-2xl p-6 shadow-xl space-y-6">
-
-      {/* Prompt Input */}
       <textarea
-        className="w-full p-4 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-blue-500"
+        className="w-full p-4 rounded-lg bg-gray-800 border border-gray-700"
         placeholder="Describe your image..."
         value={prompt}
         onChange={(e) => setPrompt(e.target.value)}
       />
 
-      {/* Controls */}
       <div className="grid md:grid-cols-3 gap-4">
-
         <select
           className="bg-gray-800 p-3 rounded-lg"
           value={style}
@@ -103,7 +107,6 @@ export default function AIStudio() {
         />
       </div>
 
-      {/* Generate Button */}
       <button
         onClick={generateImage}
         disabled={loading}
@@ -112,7 +115,6 @@ export default function AIStudio() {
         {loading ? "Generating..." : "Generate Image"}
       </button>
 
-      {/* Output */}
       {image && (
         <div className="text-center space-y-4">
           <img
